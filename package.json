@@ -1,0 +1,24 @@
+{
+  "name": "bookit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev-frontend": "cd apps/frontend && npm run dev",
+    "dev-backend": "cd apps/backend && npm run dev",
+    "dev-database": "docker-compose up",
+    "build": "npm run build --workspaces --if-present",
+    "dev": "concurrently \"npm run dev-*\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}
